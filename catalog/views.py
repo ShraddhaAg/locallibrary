@@ -18,13 +18,15 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 class BookListView(generic.ListView):
-     model=Book
+    model = Book
+    paginate_by = 2
+    queryset = Book.objects.order_by('title')
 
 class BookDetailView(generic.DetailView):
-    model=Book
+    model = Book
 
 class AuthorListView(generic.ListView):
-     model=Author
+     model = Author
 
 class AuthorDetailView(generic.DetailView):
-    model=Author
+    model = Author
