@@ -24,6 +24,7 @@ class BookListView(generic.ListView):
 
 class BookDetailView(generic.DetailView):
     model = Book
+    template_name ='catalog/bookdetail.html'
 
 class AuthorListView(generic.ListView):
      model = Author
